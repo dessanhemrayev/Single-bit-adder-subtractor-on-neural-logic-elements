@@ -305,8 +305,13 @@ namespace neutal
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             dataGridView1.RowCount = 8;
-
+            dataGridView1.Columns[0].Width = 94;
+            dataGridView1.Columns[1].Width =94;
+            dataGridView1.Columns[2].Width = 94;
+            dataGridView1.Columns[3].Width = 94;
+            dataGridView1.Columns[4].Width = 94;
             int[,] matr = { {0,0,0 },
                             {0,0,1 },
                             {0,1,0 },
