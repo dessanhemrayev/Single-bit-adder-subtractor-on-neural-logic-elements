@@ -21,19 +21,19 @@ namespace neutal
             chart4.Series[0].Points.Clear();
             chart5.Series[0].Points.Clear();
             chart6.Series[0].Points.Clear();
-            dataGridView1.Enabled= false;
-            this.dataGridView1.SelectionMode =  DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Enabled = false;
+            this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.MultiSelect = false;
-           
+
         }
-       
-        static List<int> cbs = new List<int>() {0};
+
+        static List<int> cbs = new List<int>() { 0 };
         static List<int> cbs1 = new List<int>() { 1 };
-        static List<int> p= new List<int>() {  };
-        static List<int> ak = new List<int>() {  };
-        static List<int> bk = new List<int>() {  };
-        static List<int> sk = new List<int>() {  };
-        static List<int> pk = new List<int>() {  };
+        static List<int> p = new List<int>() { };
+        static List<int> ak = new List<int>() { };
+        static List<int> bk = new List<int>() { };
+        static List<int> sk = new List<int>() { };
+        static List<int> pk = new List<int>() { };
         public static int row = 0;
 
         private void ClearCharts()
@@ -86,9 +86,9 @@ namespace neutal
             int result;
             bool a1;
             bool b1;
-            if (a == 1) 
+            if (a == 1)
             {
-                a1 = true; 
+                a1 = true;
             }
             else
             {
@@ -126,7 +126,7 @@ namespace neutal
             {
                 res = 0;
             }
-            return res; 
+            return res;
         }
         private void grafik(int cb1)
         {
@@ -147,9 +147,9 @@ namespace neutal
                 chart5.Series[0].Points.AddXY(i, sk[i]);
                 chart6.Series[0].Points.AddXY(i, pk[i]);
             }
-            
 
-        
+
+
         }
 
         private void setka()
@@ -170,14 +170,14 @@ namespace neutal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             if (checkBox1.Checked)
             {
                 setka();
             }
-            
 
-            if (textBox5.Text.Length != 0 && row<8)
+
+            if (textBox5.Text.Length != 0 && row < 8)
             {
                 ClearCharts();
                 textBox1.Text = dataGridView1[1, row].Value.ToString();
@@ -242,13 +242,15 @@ namespace neutal
 
 
 
-                if (cb == 0) {
+                if (cb == 0)
+                {
                     label26.Text = "Si";
                     label27.Text = "Pi";
                     label28.Text = "СВ=0";
                     label32.Text = "Si";
                     label33.Text = "Pi";
-                    if (row == 7) {
+                    if (row == 7)
+                    {
                         cbs.Add(0);
                         ak.Add(1);
                         bk.Add(1);
@@ -262,7 +264,7 @@ namespace neutal
                     {
                         cbs.Add(cb);
                     }
-                    
+
                     grafik(cb);
                 }
                 else
@@ -289,11 +291,11 @@ namespace neutal
                     }
 
                     grafik(cb);
-                   
+
                 }
 
                 row++;
-                
+
 
             }
             else
@@ -305,10 +307,10 @@ namespace neutal
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             dataGridView1.RowCount = 8;
             dataGridView1.Columns[0].Width = 94;
-            dataGridView1.Columns[1].Width =94;
+            dataGridView1.Columns[1].Width = 94;
             dataGridView1.Columns[2].Width = 94;
             dataGridView1.Columns[3].Width = 94;
             dataGridView1.Columns[4].Width = 94;
@@ -323,7 +325,7 @@ namespace neutal
 
             for (int i = 0; i < matr.GetLength(0); i++)
             {
-                for (int j = 0; j <matr.GetLength(1); j++)
+                for (int j = 0; j < matr.GetLength(1); j++)
                 {
                     dataGridView1[j, i].Value = matr[i, j];
                 }
@@ -333,6 +335,48 @@ namespace neutal
         private void label30_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    dataGridView1[j, i].Value = "";
+                }
+            }
+            int[,] matr = { {0,0,0 },
+                            {0,0,1 },
+                            {0,1,0 },
+                            {0,1,1 },
+                            {1,0,0 },
+                            {1,0,1 },
+                            {1,1,0 },
+                            {1,1,1 }};
+
+            for (int i = 0; i < matr.GetLength(0); i++)
+            {
+                for (int j = 0; j < matr.GetLength(1); j++)
+                {
+                    dataGridView1[j, i].Value = matr[i, j];
+                }
+            }
+
+
+            textBox1.Text = "";
+            textBox4.Text = "";
+            textBox2.Text = ""; ;
+            textBox3.Text = "";
+            textBox15.Text = "";
+
+            textBox6.Text = "";
+            textBox7.Text = "";
+            textBox12.Text = "";
+            textBox14.Text = "";
+            textBox10.Text = "";
+            textBox13.Text = "";
+            ClearCharts();
         }
     }
 }
