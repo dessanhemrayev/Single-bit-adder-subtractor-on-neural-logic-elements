@@ -197,7 +197,7 @@ namespace neutal
 
 
                 int logic1 = logil2(ai, bi);
-                textBox15.Text = logic1.ToString();
+                //textBox15.Text = logic1.ToString();
 
 
                 int neuronElement1 = neuron(ai, logic1, bi);
@@ -208,7 +208,7 @@ namespace neutal
                 // второй НЭ
 
                 int logic2 = logil2(neuronElement1, pi1);
-                textBox7.Text = logic2.ToString();
+                //textBox7.Text = logic2.ToString();
 
                 int neuronElement2 = neuron(neuronElement1, logic2, pi1);
                 textBox12.Text = neuronElement2.ToString();
@@ -219,7 +219,7 @@ namespace neutal
 
                 // третий НЭ
                 int logic3 = logil2(ai, cb);
-                textBox14.Text = logic3.ToString();
+               // textBox14.Text = logic3.ToString();
 
                 int neuronElement3 = neuron(ai, logic3, cb);
                 textBox10.Text = neuronElement3.ToString();
@@ -368,15 +368,27 @@ namespace neutal
             textBox4.Text = "";
             textBox2.Text = ""; ;
             textBox3.Text = "";
-            textBox15.Text = "";
+           // textBox15.Text = "";
 
-            textBox6.Text = "";
-            textBox7.Text = "";
-            textBox12.Text = "";
-            textBox14.Text = "";
+//            textBox6.Text = "";
+  //          textBox7.Text = "";
+    //        textBox12.Text = "";
+      //      textBox14.Text = "";
             textBox10.Text = "";
             textBox13.Text = "";
+            button1.Enabled = true;
             ClearCharts();
+            row = 0;
+            cbs.Clear();
+            cbs.Add(0);
+            cbs1.Clear();
+            cbs1.Add(1);
+            ak.Clear();
+            bk.Clear();
+            p.Clear();
+            pk.Clear();
+            pk.Clear();
+            sk.Clear();
         }
     }
 }
